@@ -9,6 +9,11 @@
             "date": 1694500912350,
             "name": "G:\\Level 2 PHero\\Backend_Setup\\prisma_postgres_setup\\logs\\winston\\successes\\bc-2023-12-09-12-success.log",
             "hash": "7057ced4406b46c90cb934d63898e3bef22c2b27ace9b53cee521ae0ba44bf5a"
+        },
+        {
+            "date": 1694510941561,
+            "name": "G:\\Level 2 PHero\\Backend_Setup\\prisma_postgres_setup\\logs\\winston\\successes\\bc-2023-12-09-15-success.log",
+            "hash": "1ed9c6906ef63be5241bc97dfcda00f5f5ae0e1b65ea897da28d04da7f2beed7"
         }
     ],
     "hashType": "sha256"
