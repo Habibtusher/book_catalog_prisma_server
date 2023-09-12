@@ -10,7 +10,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
 model User {
   id         String            @id @default(uuid())
   name       String
@@ -21,13 +20,17 @@ model User {
   address    String
   profileImg String?
   reviews    ReviewAndRating[]
-  orders      Order[]
+  orders     Order[]
+  createdAt  DateTime          @default(now())
+  updatedAt  DateTime          @updatedAt
 }
 
 model Category {
-  id    String @id @default(uuid())
-  title String
-  books Book[]
+  id        String   @id @default(uuid())
+  title     String
+  books     Book[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model Book {
@@ -40,26 +43,29 @@ model Book {
   categoryId      String
   category        Category          @relation(fields: [categoryId], references: [id])
   reviews         ReviewAndRating[]
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
 }
 
 model ReviewAndRating {
-  id     String @id @default(uuid())
-  review String
-  rating Int
-  userId String 
-  bookId String 
-  user   User   @relation(fields: [userId], references: [id])
-  book   Book   @relation(fields: [bookId], references: [id])
+  id        String   @id @default(uuid())
+  review    String
+  rating    Int
+  userId    String
+  bookId    String
+  user      User     @relation(fields: [userId], references: [id])
+  book      Book     @relation(fields: [bookId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
-
-
 
 model Order {
   id           String   @id @default(uuid())
-  userId       String 
+  userId       String
   orderedBooks Json
   status       String   @default("pending")
   createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
   user         User     @relation(fields: [userId], references: [id])
 }
 
