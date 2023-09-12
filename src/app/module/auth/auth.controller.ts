@@ -6,7 +6,7 @@ import { AuthService } from './auth.service';
 
 const insertIntoDb = catchAsync(async (req: Request, res: Response) => {
   const data = { ...req.body };
-  console.log("🚀 ~ file: auth.controller.ts:9 ~ insertIntoDb ~ data:", data)
+
   const result = await AuthService.insertIntoDb(data);
 
   sendResponse(res, {
@@ -16,8 +16,21 @@ const insertIntoDb = catchAsync(async (req: Request, res: Response) => {
     data: result,
   });
 });
+const login = catchAsync(async (req: Request, res: Response) => {
+  const data = { ...req.body };
+
+  const result = await AuthService.login(data);
+
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'User signin successfully!',
+    data: result,
+  });
+});
 
 
 export const AuthController = {
-    insertIntoDb
+    insertIntoDb,
+    login
 }

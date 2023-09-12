@@ -9,5 +9,9 @@ router.post(
   validateRequest(UserValidation.create),
   AuthController.insertIntoDb
 );
+router.post(
+  '/signin',
+  AuthController.login
+);
 
 export const AuthRoutes = router;
