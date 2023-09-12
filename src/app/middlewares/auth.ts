@@ -16,7 +16,7 @@ const auth =
       let verifiedUser = null;
 
       verifiedUser = jwtHelpers.verifyToken(token,'###AAAaaa');
-      console.log("🚀 ~ file: auth.ts:19 ~ verifiedUser:", verifiedUser)
+     
 
       req.user = verifiedUser; 
 

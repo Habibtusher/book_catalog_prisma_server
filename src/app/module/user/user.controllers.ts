@@ -25,7 +25,33 @@ const findById = catchAsync(async (req:Request,res:Response) => {
         data: result
     })
 })
+const update = catchAsync(async (req:Request,res:Response) => {
+    const  {id} = req.params
+    
+    const result = await UserService.update(id,req.body)
+
+    sendResponse(res,{
+        statusCode:httpStatus.OK,
+        success:true,
+        message:"User updated successfully!",
+        data: result
+    })
+})
+const deleteUser = catchAsync(async (req:Request,res:Response) => {
+    const  {id} = req.params
+    
+    const result = await UserService.deleteUser(id)
+
+    sendResponse(res,{
+        statusCode:httpStatus.OK,
+        success:true,
+        message:"User deleted successfully!",
+        data: result
+    })
+})
 export const UserController = {
     getAllFromDB,
-    findById
+    findById,
+    update,
+    deleteUser
 }
