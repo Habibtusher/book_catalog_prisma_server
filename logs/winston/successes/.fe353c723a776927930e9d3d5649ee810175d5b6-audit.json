@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "G:\\Level 2 PHero\\Backend_Setup\\prisma_postgres_setup\\logs\\winston\\successes\\.fe353c723a776927930e9d3d5649ee810175d5b6-audit.json",
+    "files": [
+        {
+            "date": 1694500912350,
+            "name": "G:\\Level 2 PHero\\Backend_Setup\\prisma_postgres_setup\\logs\\winston\\successes\\bc-2023-12-09-12-success.log",
+            "hash": "7057ced4406b46c90cb934d63898e3bef22c2b27ace9b53cee521ae0ba44bf5a"
+        }
+    ],
+    "hashType": "sha256"
+}
