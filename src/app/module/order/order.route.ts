@@ -5,8 +5,12 @@ import auth from '../../middlewares/auth';
 import { OrderController } from './order.controller';
 
 const router = express.Router();
-router.get('/', auth(ENUM_USER_ROLE.ADMIN),OrderController.getAllFromDB);
-router.get('/by-customer', auth(ENUM_USER_ROLE.CUSTOMER),OrderController.getOrderByCustomer);
+router.get(
+  '/',
+  auth(ENUM_USER_ROLE.ADMIN, ENUM_USER_ROLE.CUSTOMER),
+  OrderController.getAllFromDB
+);
+
 router.post(
   '/create-order',
   auth(ENUM_USER_ROLE.CUSTOMER),
