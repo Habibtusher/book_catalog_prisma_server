@@ -9,7 +9,7 @@ router.get('', CategoryController.getAllFromDB);
 router.get('/:id', CategoryController.getByIdFromDB);
 router.patch('/:id', auth(ENUM_USER_ROLE.ADMIN), CategoryController.update);
 router.post(
-  '/',
+  '/create-category',
   auth(ENUM_USER_ROLE.ADMIN),
   validateRequest(CategoryValidation.create),
   CategoryController.insertIntoDB
