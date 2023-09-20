@@ -34,7 +34,7 @@ const login = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, 
         statusCode: http_status_1.default.OK,
         success: true,
         message: 'User signin successfully!',
-        data: result,
+        token: result.token,
     });
 }));
 exports.AuthController = {
